@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients List</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="patientsList.css">
+</head>
+<body>
+
+
+<table id="doctorresultTable">
+    
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+            
+    <tbody>
+    </tbody>
+
+</table>
+
+
+<script>
+
+    listUser();
+    async function listUser()
+    {
+
+    const url="PatientLists";
+    const response= await fetch(url);
+
+    const data=await response.json();
+
+        var tableContent = document.querySelector('#doctorresultTable > tbody');
+        data.forEach(instance => {
+          const row = document.createElement('tr');
+          tableContent.appendChild(row);
+          
+          // Only select the values from the 'name' and 'age' properties
+          const { name, phone_no, email } = instance;
+          
+          const cell1 = document.createElement('td');
+          cell1.innerText = name;
+          row.appendChild(cell1);
+          
+          const cell2 = document.createElement('td');
+          cell2.innerText = phone_no;
+          row.appendChild(cell2);
+
+          const cell3 = document.createElement('td');
+          cell3.innerText = email;
+          row.appendChild(cell3);
+        });
+    }
+//     console.log(data);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit page</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+     <link rel="stylesheet" href="dashboard.css">
+     <style>
+      #container {
+  margin: 50px auto;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+}
+
+#container td {
+  padding: 0;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #1c2331;
+  color: #fff;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.forms label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.forms input[type="text"],
+.forms textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+
+.forms input[type="submit"] {
+  background-color: #1c2331;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.forms input[type="submit"]:hover {
+  background-color: #fff;
+  color: #1c2331;
+  border: 2px solid #1c2331;
+}
+
+@media only screen and (max-width: 600px) {
+  .forms {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    padding: 30px 20px;
+  }
+  
+  .forms input[type="text"],
+  .forms textarea {
+    font-size: 14px;
+  }
+  
+  .forms input[type="submit"] {
+    font-size: 16px;
+  }
+}
+
+     </style>
+</head>
+
+<body>
+    <br><br><br><br><br><br><br><br><br>
+<header class="header">
+  <a href="#" class="logo"> <i class="fa-sharp fa-solid fa-address-book"></i> Edit Your Profile</a>
+   <div class="icons">
+    <a href="/dashboard" class="fa-sharp fa-solid fa-house" id="dashboard" title="dashboard"></a> 
+    <a href="#doctors" class="fa-sharp fa-solid fa-user-doctor" id="doctor" title="Doctors"> </a>
+    <a href="#patients" class="fa-sharp fa-solid fa-bed" id="patient" title="Patients"></a>
+    <div class="dropdown">
+      <a href="#" class="fa-sharp fa-solid fa-gear" id="settings" title="Settings"></a>
+      <div class="dropdown-content">
+        <a href="\view">View </a>
+        <a href="\logout">Logout</a>
+       
+      </div>
+    </div>
+    <a class="fas fa-search" id="search-btn" title="Search"> </a>
+   </div>
+    <form action="" class="search-form">
+    <input type="search" id="search-box" placeholder="search...">
+    <label for="search-box" class="fas fa-search"></label>
+</form>
+</header>
+
+<table id="container">
+  <tr>
+    <td colspan="2"><h1>Welcome <%= user.name %></h1></td>
+  </tr>
+  <tr>
+    <td>
+      <form class="forms" action="/update" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= user.name %>">
+        <br><br>
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email" value="<%= user.email %>">
+        <br><br>
+        <label for="Phone">Phone:</label>
+        <input type="text" id="Phone" name="phone_no" value="<%= user.phone_no %>">
+      <br><br>
+        <label for="Address">Address:</label>
+        <textarea id="Address" name="address"><%= user.address %></textarea>
+        <br>
+        <br>
+        
+        <input type="submit" name="submit" value="Save changes" class="form-btn" >
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

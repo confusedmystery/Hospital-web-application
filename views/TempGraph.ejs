@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temparature Graph</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgba(54, 162, 235, 1);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgba(54, 162, 235, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(54, 162, 235, 1);
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div class="chartMenu">
+      <p>Graph</p>
+    </div>
+    
+    <div class="chartCard">
+      <div class="chartBox">
+        <h4 id="date"></h4>
+        <h1 id="currentpatient" ><%= name %> </h1>
+       <br>
+        
+        <canvas id="myChart"></canvas>
+       
+      </div>
+
+   
+<div class="chartBox">
+        <input type="date" id="date-input">
+        
+
+
+        <canvas id="chart"></canvas>
+        <button onclick="plotData()">Plot</button>
+        
+      </div>
+   
+
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script src="TempGraph.js"></script>
+    <script>
+    // setup 
+    
+    ///function getData(){
+     // getData();
+  //   async function getData(){
+  //     let currentPatientName =document.getElementById("current-patient").textContent
+  //     console.log(currentPatientName)
+  //     const url="sensorUserdata";
+  //   const response= await fetch(url);
+
+  //  const data=await response.json();
+  // // console.log(data);
+  //     let createdday=document.getElementById('date').value;
+  //   // const createdday=document.getElementById('date-input').value;
+  //      // console.log(createdday);
+      
+  //    console.log(data);
+     
+  //     data.forEach(item => {
+  //      if(currentPatientName===item.patient_Id)
+  //     {
+  //   //     datapoints=datapoints.filter(item=>item.Temparature.forEach(i=>{
+  //   //     i.createdDay===createdday}))
+  //           console.log(item.patient_Id)
+  //     }
+  //   });
+ //datapoints=datapoints.filter(item=>item.patient_Id===currentPatientName)
+
+
+      //console.log(datapoints.filter(item=>item.createdDay===createdday));
+      
+    //console.log(datapoints);
+      //return datapoints;
+  //  }
+
+    // getData().then(datapoints=>{
+    //   const time=datapoints.map(
+    //     function(index){
+    //       return index.createdAt
+    //     });
+    //     const tempvalue=datapoints.map(
+    //     function(index){
+    //       return index.Temp
+    //     });
+    //     //console.log(time);
+
+
+    //     myChart.config.data.labels=time;
+    //     myChart.config.data.datasets[0].data=tempvalue;
+    //     myChart.update();
+
+    //     // chart.config.data.labels=time;
+    //     // chart.config.data.datasets[0].data=tempvalue;
+    //     // chart.update();
+    //       })
+       // };
+
+    //     function plotData(){
+    // async function getData(){
+    //   const url='sensorUserdata';
+    //  const response= await fetch(url);
+    //  const createdday=document.getElementById('date-input').value;
+    //     // console.log(createdday);
+    //   let datapoints=await response.json();
+    // // console.log(datapoints);
+    //  //console.log(datapoints.filter(item=>item.createdDay===createdday));
+    //  datapoints=datapoints.filter(item=>item.createdDay===createdday)
+    //  //console.log(datapoints);
+    //    return datapoints;
+    // }
+
+    //  getData().then(datapoints=>{
+    //    const time=datapoints.map(
+    //     function(index){
+    //       return index.createdAt
+    //     });
+    //     const tempvalue=datapoints.map(
+    //     function(index){
+    //      return index.Temp
+    //     });
+    //     //console.log(time);
+
+
+    // //     // myChart.config.data.labels=time;
+    // //     // myChart.config.data.datasets[0].data=tempvalue;
+    // //     // myChart.update();
+
+    //    chart.config.data.labels=time;
+    //     chart.config.data.datasets[0].data=tempvalue;
+    //     chart.update();
+    //       })
+    //     };
+
+
+       
+
+
+      
+//          var currentDate = new Date();
+
+// // Get the HTML elements
+// var dateInput = document.getElementById("date-input");
+// // var currentDateElement = document.getElementById("current-date");
+
+// // Set the value of the date input to the current date
+// var day = currentDate.getDate();
+// var month = currentDate.getMonth() + 1;
+// var year = currentDate.getFullYear();
+// const current = year + "-" + month.toString().padStart(2, "0") + "-" + day.toString().padStart(2, "0");
+// dateInput.value = year + "-" + month.toString().padStart(2, "0") + "-" + day.toString().padStart(2, "0");
+// document.getElementById('date').value=current;
+// document.getElementById('date').innerHTML=current;
+//console.log(dateInput.value)
+
+// getData();
+
+//     const data = {
+//       labels: [],
+//       datasets: [{
+//         label: 'Temperature',
+//         data: [],
+//         backgroundColor: [
+//           'rgba(255, 26, 104, 0.2)',
+//           'rgba(54, 162, 235, 0.2)',
+//           'rgba(255, 206, 86, 0.2)',
+//           'rgba(75, 192, 192, 0.2)',
+//           'rgba(153, 102, 255, 0.2)',
+//           'rgba(255, 159, 64, 0.2)',
+//           'rgba(0, 0, 0, 0.2)'
+//         ],
+//         borderColor: [
+//           'rgba(255, 26, 104, 1)',
+//           'rgba(54, 162, 235, 1)',
+//           'rgba(255, 206, 86, 1)',
+//           'rgba(75, 192, 192, 1)',
+//           'rgba(153, 102, 255, 1)',
+//           'rgba(255, 159, 64, 1)',
+//           'rgba(0, 0, 0, 1)'
+//         ],
+//         borderWidth: 2
+//       }]
+//     };
+
+//     // config 
+//     const config = {
+//       type: 'line',
+//       data,
+//       options: {
+//         scales: {
+//           y: {
+//             beginAtZero: true
+//           }
+//         }
+//       }
+//     };
+
+//     // render init block
+//     const myChart = new Chart(
+//       document.getElementById('myChart'),
+//       config
+//     );
+//      const chart = new Chart(
+//        document.getElementById('chart'),
+//        config
+//      );
+    </script>
+    
+  </body>
+</html>

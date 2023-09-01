@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>login form</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+ 
+<div class="form-container">
+
+   <form action="/login" method="post">
+      <h3>login now</h3>
+      <input type="email" name="email" id="email-field"  required placeholder="enter your email">
+      <input type="password" name="password" id="password-field" required placeholder="enter your password">
+      
+      <input type="submit" name="submit" value="login now" class="form-btn" id="login">
+      <p>don't have an account? <a href="/signin">register now</a></p>
+   </form>
+ <!--
+   <select name="user_type">
+        <option value="Patient">Patient</option>
+        <option value="Doctor">Doctor</option>
+        <option value="Caretaker">Caretaker</option>
+        <option value="Admin">Admin</option>
+     </select>
+    -->
+</div>
+<!-- <script>
+ // setup 
+ const loginButton = document.getElementById("login");
+
+    
+
+   loginButton.onclick=check;
+    function check(event){
+
+   
+  getData();
+
+    //console.log(users.email)
+   event.preventDefault();
+     const email = document.getElementById("email-field").value;
+    const password = document.getElementById("password-field").value;
+    
+//     //document.getElementById("demo").innerHTML = y;
+//    // alert("Submit?");
+console.log(email)
+    console.log(password)
+    
+  
+}
+async function getData(){
+    const url='http://localhost:3000/loginverify';
+    const response= await fetch(url);
+
+      const users=await response.json();
+       //console.log(users);
+    return users;
+  }
+</script>
+   -->
+
+</body>
+</html>

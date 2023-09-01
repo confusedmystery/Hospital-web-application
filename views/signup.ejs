@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>register form</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+   <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+   
+<div class="form-container">
+
+   <form action="/signup" method="post" class="forms">
+      <h3>register now</h3>
+      <input type="text" name="name" required placeholder="Enter name">
+      <input type="email" name="email" required placeholder="Enter email">
+      <input type="number" name="phone_no" required placeholder="Enter phone number" id="phone-number-input">
+      <input type="text" name="address" required placeholder="Enter Address">      
+      <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>  
+      <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
+      <select name="user_type">
+         <option value="Patient">Patient</option>
+         <option value="Doctor">Doctor</option>
+         <option value="Caretaker">Caretaker</option>
+      </select>
+      <input type="submit" name="submit" value="register now" class="form-btn">
+      <p>already have an account? <a href="/login">login now</a></p>
+   </form>
+
+</div>
+
+<script>
+
+   const phoneNumberInput = document.querySelector('#phone-number-input');
+
+phoneNumberInput.addEventListener('change', (event) => {
+  const phoneNumber = event.target.value.replace(/\D/g, ''); // remove non-numeric characters
+  if (phoneNumber.length !== 10) {
+    alert('Please enter a 10-digit phone number.');
+    event.preventDefault(); // prevent form submission
+  }
+});
+
+
+   var select = document.getElementsByName("user_type")[0];
+   select.addEventListener("change", function() {
+      var formContainer = document.querySelector(".forms");
+      var uniqueId = document.getElementsByName("unique_id")[0];
+      if (select.value === "Caretaker" || select.value === "Doctor") {
+         if (!uniqueId) {
+            var input = document.createElement("input");
+            input.type = "text";
+            input.name = "unique_id";
+            input.required = true;
+            input.placeholder = "Enter your unique ID";
+            formContainer.appendChild(input);
+         }
+      } else {
+         if (uniqueId) {
+            formContainer.removeChild(uniqueId);
+         }
+      }
+   });
+</script>
+
+</body>
+</html>

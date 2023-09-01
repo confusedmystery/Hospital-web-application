@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+
+:root{
+     --orange:#ff7800;
+     --black:#130f40;
+     --light-color:#666;
+     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+     --border: .2rem solid rgba(0,0,0,.1);
+     --outline: .1rem solid rgba(0,0,0,.1);
+     --outline-hover: .2rem solid var(--black);
+
+}
+
+
+*{
+    font-family: 'Poppins',sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline:none; border:none;
+    text-decoration:none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+}
+
+html {
+       font-size:62.5%;
+       overflow-x:hidden;
+       scroll-behavior: smooth;
+       scroll-padding-top: 7rem;
+
+}
+
+body{
+    background: #eee;
+}
+section{
+   /* padding:4rem 4rem;
+    background-color: #666;*/
+   margin: 4rem 2rem;
+   
+   }
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+   display:flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 2rem 9%;
+   background: #fff;
+   box-shadow: var(--box-shadow); 
+}
+
+.header .logo{
+    font-size:2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+
+.header .logo i{
+    color:var(--orange);
+}
+
+
+/*.header .navbar a{
+  font-size: 1.7rem;
+  margin:0 1rem;
+  color:var(--black);
+ 
+/* margin-left: 6rem
+
+  margin-right:16rem;
+}
+
+.header .navbar a:hover{
+   
+    color: var(--orange);
+  }*/
+
+.header .icons a{
+    height: 5.5rem;
+    width: 5.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--black);
+    font-size:2rem;
+    margin-left:2rem;
+    cursor: pointer;
+    text-align:center;
+    
+
+}
+
+.header .icons a:hover{
+    background: var(--orange);
+    color:#fff;
+
+}
+
+.header .search-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width: 50rem;
+    height: 4rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+.header .search-form.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+
+}
+
+.header .search-form label{
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .search-form label:hover{
+    color: var(--orange);
+}
+
+
+
+
+
+
+.header .add-room{
+    position: absolute;
+    top:110%; right:-110%;
+    width: 25rem;
+    height: 12rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    justify-items: center;
+    /*align-self: flex-start;*/
+}
+.header .add-room.active{
+    right: 16rem;
+   /* transition: width 2s, height 2s, transform 2s;*/
+    transition: .4s linear;
+}
+/*.add-room::placeholder {
+    color: #3a3a3a;
+  }*/
+
+
+  
+.header .add-room input{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1rem;
+    color: var(--black);
+    padding: 0 1rem;
+    transition: width 2s, height 2s;
+
+}
+header #Add {
+    width: 20%;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+    
+  }
+
+
+  .header .add-room #room-id:hover{
+    height: 115%;
+    width: 100%;
+   border: #130f40;
+  /* border-style:groove;*/
+   border-radius: 5px;
+   border-width: .1rem;
+   background-color:lightgray;
+   font-size: medium;
+  }
+
+  .header .add-room #patient-name:hover{
+    height: 120%;
+    width: 100%;
+   border: #130f40;
+   /*border-style:groove;*/
+   border-radius: 5px;
+   border-width: .1rem;
+   background-color:lightgray;
+   font-size: medium;
+
+  }
+  header #Add:hover{
+    height:75%;
+    width: 25%;
+  }
+
+  .info-box{
+    margin-top:12rem;
+   /* padding-top:12rem;
+    padding-bottom: 25rem;*/
+}
+.formcontainer{
+    margin-top:12rem;
+}
+ /*.info-box .container {
+    display:flex;
+    /*grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+  /* grid-template-rows: repeat(auto-fit,minmax(30rem,1fr));*/
+   /* gap:2.5rem;
+
+   /* border-style: groove;
+}*/
+
+   
+
+/*.info-box .container .box{
+   padding: 4rem 4rem;
+    outline-offset: -1rem;
+    background: #fff;
+    outline: var(--orange);
+    font-size: medium;
+    /*text-align: center;*/
+ /*   box-shadow: var(--black);
+    float:left;
+}
+
+.info-box .container .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}*/
+.card {
+    width: 300px;
+    height: 400px;
+    background-color: #ddd;
+    margin: 10px;
+    padding: 10px;
+    box-sizing:content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    float:left;
+}
+
+.card h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.card p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.card .status {
+    font-weight: bold;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+table {
+  margin: auto; /* center the table horizontally */
+  width: 80%; /* set the width of the table to 80% of the container */
+  border-collapse: collapse; /* remove spacing between cells */
+}
+
+th, td {
+  padding: 10px; /* add padding to cells for better spacing */
+  text-align: left; /* align cell text to the left */
+  border: 1px solid black; /* add border to cells */
+}
+
+th {
+  background-color: #ddd; /* add background color to table header cells */
+}
+ 
+
+
+ ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text pre {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+ 
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}

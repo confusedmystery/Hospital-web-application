@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Assigning doctor and caretaker to patient</h1>
+
+      <form class="forms" action="/docassign" method="post">
+        <label for="name1">Patient Name:</label>
+        <input type="text" id="name1" name="patient" onkeyup="sendData(this,document.getElementById('searchResults'),route='getPatientsdoc')" required>
+        <section id="searchResults">
+
+        </section>
+        <br><br>
+        <label for="name1">Doctor:</label>
+        <input type="text" id="name1" name="doctor" onkeyup="sendData(this,document.getElementById('searchResultsdoc'),route='getDoctors')" required>
+        <section id="searchResultsdoc">
+
+        </section>
+        <br><br>
+        <button type="submit">Assign Doctor</button>
+        <br><br>
+    </form>
+
+      <form class="forms" action="/ctassign" method="post">
+        <label for="name2">Patient Name:</label>
+        <input type="text" id="name2" name="patient" onkeyup="sendData(this,document.getElementById('searchResults2'),route='getPatientsct')" required>
+        <section id="searchResults2">
+
+        </section>
+        <br><br>
+        <label for="name1">Caretaker:</label>
+        <input type="text" id="name1" name="caretaker"  onkeyup="sendData(this,document.getElementById('searchResultsct'),route='getCaretakers')" required>
+        <section id="searchResultsct">
+
+        </section>
+        <br><br>
+        <button type="submit">Assign Caretaker</button>
+        <br><br>
+    </form>
+
+    <script src="assign.js"></script>
+</body>
+</html>

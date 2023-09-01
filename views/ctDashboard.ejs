@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="ctDashboard.css">
+</head>
+<body>
+      <header class="header">
+
+    <a href="#" class="logo"> <i class="fa-sharp fa-solid fa-address-book"></i> Dashboard</a>
+   
+    
+  
+     <div class="icons">
+  
+      <a href="/home" class="fa-sharp fa-solid fa-house" id="home" title="Home"></a> 
+      <a href="#doctors" class="fa-sharp fa-solid fa-user-doctor" id="doctor" title="Doctors"> </a>
+      <a href="#patients" class="fa-sharp fa-solid fa-bed" id="patient" title="Patients"></a>
+     
+     
+     
+      <div class="dropdown">
+     
+        <a href="#" class="fa-sharp fa-solid fa-gear" id="settings" title="Settings"></a>
+        
+        <div class="dropdown-content">
+          <a href="/view">View </a>
+          <a href="\edit">Edit </a>
+          <a href="\logout">Logout</a>
+        </div>
+      
+      </div>
+      <a class="fas fa-search" id="search-btn" title="Search"> </a>
+     </div>
+  
+  
+  
+  <form action="" class="search-form">
+      <input type="search" id="search-box" placeholder="search...">
+      <label for="search-box" class="fas fa-search"></label>
+  
+  </form>
+  
+  <!--<form action="" class="add-room">
+      <input type="room-id" id="room-id" class="add-room-field" placeholder="Enter room id. . . ">
+      <input type="patient-name" id="patient-name"  class="add-room-field" placeholder="Enter patient name. . . ">
+      <button id="Add">Add</button>
+  
+  <a href="/logout">logout</a>
+  
+  </form> -->
+  
+  </header>
+
+
+  <section class="info-box" id="info-box">
+    <div class="container"> 
+          
+
+
+    </div>
+  <h1 id="username" ><%= user.name %></h1>
+</section>
+ 
+  <script src="ctDashboard.js"></script>
+
+
+</body>
+</html>
